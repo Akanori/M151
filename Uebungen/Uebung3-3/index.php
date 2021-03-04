@@ -1,17 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "vmadmin";
-$password = "sml12345";
-$database = "northwind";
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully<br />";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
+include_once 'db.php';
+$db = DB::get();
 
 ?>
 <a href="create.php">Erstellen</a>
@@ -26,8 +15,8 @@ try {
         <th>Bearbeiten</th>
     </tr>
 <?php
-$sql = "SELECT * FROM customers";
-foreach ($conn->query($sql) as $row) {
+$custommers = $db->select("SELECT * FROM customers");
+foreach ($custommers as $row) {
     ?>
     <tr>
         <td><?= $row['company']; ?></td>
