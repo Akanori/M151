@@ -1,4 +1,4 @@
-<?
+<?php
 class DB
 {
     protected static $instance;
@@ -49,12 +49,12 @@ class DB
 
     public function query($sql, $params){
         $statement = $this->pdo->prepare($sql);
-        $statement->exececute($params);
+        $statement->execute($params);
     }
 
     public function select($sql, $params){
         $statement = $this->pdo->prepare($sql);
-        $statement->exececute($params);
+        $statement->execute($params);
 
         return $statement->fetchAll();
     }

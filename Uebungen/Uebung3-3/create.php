@@ -3,29 +3,15 @@
 error_reporting(E_ALL);
 ini_set('error_reporting', E_ALL);
 
-
-$servername = "80.74.150.110";
-$username = "northwind";
-$password = "5%wrxL66";
-$database = "northwind";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die( "Connection failed: " . $e->getMessage() );
-}
+require 'db.php';
+$db = DB::get();
 
 $isNewCustomer = true;
 if ($_GET['id'] || $_POST['id']) {
     $customerId = $_GET['id'] ? $_GET['id'] : $_POST['id'];
     $isNewCustomer = false;
 
-    $stmt = $conn->prepare('SELECT * FROM customers WHERE id = :id');
-    $result = $stmt->execute(['id' => $customerId]);
-
-    $customer = $stmt->fetch();
+    $customer = $db->select('SELECT * FROM customers WHERE id = :id', ['id' => $customerId]);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

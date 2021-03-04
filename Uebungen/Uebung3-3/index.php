@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+require 'db.php';
 $db = DB::get();
 
 ?>
@@ -15,7 +15,7 @@ $db = DB::get();
         <th>Bearbeiten</th>
     </tr>
 <?php
-$custommers = $db->select("SELECT * FROM customers");
+$custommers = $db->select("SELECT * FROM customers", null);
 foreach ($custommers as $row) {
     ?>
     <tr>
