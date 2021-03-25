@@ -1,0 +1,68 @@
+/*Header template Style*/
+
+header {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header p {
+    display: inline;
+    font-size: 5vw;
+}
+
+header #t1 {
+    width: 50%;
+    float: left;
+    background-color: rgb(175, 175, 175);
+    color: rgb(0, 0, 0);
+}
+
+header #t2 {
+    background-color: #fafafa;
+    color: rgb(0, 0, 0);
+}
+
+header section {
+    width: 100%;
+    margin: auto;
+}
+
+header button {
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    background: rgb(175, 175, 175);
+    margin-top: 5vh;
+    margin-right: 1vh;
+    border-radius: 8px;
+    font-size: xx-large;
+}
+
+/*Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #001f47;
+  }
