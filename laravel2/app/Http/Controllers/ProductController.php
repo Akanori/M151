@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function list()
     {
         $products = \App\Models\Product::all();
-        $cart = session()->get('cart');
+        $cart = session()->get('userId');
 
         return view('products', ['products' => $products]);
     }

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <header></header>
     <h1>Registrierung</h1>
 
     <form action="createUser" method="POST">
