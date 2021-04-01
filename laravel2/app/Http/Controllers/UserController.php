@@ -71,7 +71,7 @@ class UserController extends Controller
         if (session()->has('userId')) {
             $id = session()->get('userId');
             $user = \App\Models\User::find($id);
-            $orders = \App\Models\Order::where('fk_user_id', $id);
+            $orders = \App\Models\Order::all()->where('fk_user_id', $id);
             return view('profile',['orders' => $orders, 'user' => $user]);
         } else {
             return redirect('/products');

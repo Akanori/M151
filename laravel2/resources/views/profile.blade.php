@@ -19,7 +19,7 @@
         <tbody>
             @foreach ($orders as $order)
             <tr>
-                <td>{{$order -> timestamps}}</td>
+                <td>{{$order -> created_at}}</td>
                 <td>{{$order -> total}}</td>
             </tr>
             @endforeach
@@ -64,8 +64,6 @@
     </tr>
     <tr></tr>
     </table>
-
-    <a href="/completeOrder"><button>Bestellen</button></a>
 
     <script src="{{ asset('/js/template.js')}}"></script>
 </body>

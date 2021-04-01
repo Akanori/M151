@@ -14,7 +14,7 @@
                 <div class="card carddetail right">
                     <img src="{{$product->image}}" alt="{{$product->name}}" class="card-img-top">
                     <p id="normalprice">{{ $product->price }}Fr.</p>
-                    <button href="/addtocart/{{ $product->id }}">Zum Warenkorb</button>
+                    <a href="/addToCart/{{ $product->id }}/2"><button>Zum Warenkorb</button></a>
                 </div>
             </div>
             <div class="columndetail">

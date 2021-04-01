@@ -39,7 +39,7 @@ class OrderController extends Controller
         }
     }
 
-    public function addtocart($id)
+    public function addToCart($id, $destination)
     {
         $cart = $this->loadCart();
         $product = \App\Models\Product::find($id);
@@ -59,16 +59,41 @@ class OrderController extends Controller
         }
 
         session()->put('cart', $cart);
-        return redirect('/products');
+        if ($destination == 1) {
+            return redirect('/products');
+        } else if ($destination == 2) {
+            return redirect("/product/$id");
+        }
+    }
+
+    public function updateCart($id, $value)
+    {
+        $cart = $this->loadCart();
+
+        foreach ($cart as $prod) {
+            if ($id == $prod->id) {
+                if ($value == 0) {
+                    $intemToDelete = array_search($prod, $cart);
+                    dump($intemToDelete);
+                    unset($cart[$intemToDelete]);
+                    session()->put('cart', $cart);
+                } else {
+                    $prod->count = $value;
+                }
+                break;
+            }
+        }
+
+        return redirect("/cart");
     }
 
     public function order()
     {
         if (session()->has('cart') || session()->has('userId')) {
-        $cart = session()->get('cart');
+            $cart = session()->get('cart');
 
-        $total = $this->getTotal();
-        
+            $total = $this->getTotal();
+
             $id = session()->get('userId');
             $user = \App\Models\User::find($id);
 
@@ -87,7 +112,8 @@ class OrderController extends Controller
         $insert = $order->save();
         if ($insert) {
             session()->forget('cart');
-            echo '<script>alert("Bestellung Abgeschlossen!")</script>';
+            echo '<script>alert("Bestellung Abgeschlossen!");
+            window.location.href = "/products";</script>';
         }
     }
 }

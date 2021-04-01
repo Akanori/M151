@@ -19,7 +19,9 @@ Route::get('/products', [\App\Http\Controllers\ProductController::class, 'list']
 
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'detail']);
 
-Route::get('/addtocart/{id}', [\App\Http\Controllers\OrderController::class, 'addtocart']);
+Route::get('/addToCart/{id}/{destination}', [\App\Http\Controllers\OrderController::class, 'addToCart']);
+
+Route::get('/updateCart/{id}/{value}', [\App\Http\Controllers\OrderController::class, 'updateCart']);
 
 Route::get('/cart', [\App\Http\Controllers\OrderController::class, 'cart']);
 
