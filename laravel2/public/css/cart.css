@@ -37,8 +37,10 @@ table tbody tr:last-of-type {
   border-bottom: 2px solid #ffa420;
 }
 
-/*style input*/
-
 input{
   width: 10vh;
+}
+
+.bold{
+  font-weight: bold;
 }

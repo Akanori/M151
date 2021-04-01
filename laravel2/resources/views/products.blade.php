@@ -17,7 +17,7 @@
                     <a href="/product/{{ $product->id }}"> <img src="{{$product->image}}" alt="{{$product->name}}" class="card-img-top"></a>
                     <p id="name">{{$product -> name}}</p>
                     <p id="specialprice">{{$product -> price}} Fr.</p>
-                    <a href="/addToCart/{{ $product->id }}/2"><button>Zum Warenkorb</button></a>
+                    <a href="/addToCart/{{ $product->id }}/1"><button>Zum Warenkorb</button></a>
                 </div>
             </div>
             @endforeach

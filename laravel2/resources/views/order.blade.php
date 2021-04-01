@@ -17,6 +17,8 @@
                 <th>Preis</th>
                 <th>Anzahl</th>
                 <th>Total</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +37,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Lieferkosten:</td>
+            <td class="bold">Lieferkosten:</td>
             <td>0</td>
             </tr>
             <tr>
@@ -44,14 +46,14 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Total:</td>
+            <td class="bold">Total:</td>
             <td>{{$total}}</td>
             </tr>
         </tbody>
     </table>
     <table>
     <tr>
-    <td>Zahlungsart:</td>
+    <td class="bold">Zahlungsart:</td>
     <td>Rechnung</td>
     </tr>
     <tr></tr>
@@ -90,6 +92,7 @@
     </table>
 
     <a href="/completeOrder"><button>Bestellen</button></a>
+    <a href="/cart"><button>Abbrechen</button></a>
 
     <script src="{{ asset('/js/template.js')}}"></script>
 </body>

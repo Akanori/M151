@@ -23,6 +23,8 @@ Route::get('/addToCart/{id}/{destination}', [\App\Http\Controllers\OrderControll
 
 Route::get('/updateCart/{id}/{value}', [\App\Http\Controllers\OrderController::class, 'updateCart']);
 
+Route::get('/emptyCart', [\App\Http\Controllers\OrderController::class, 'emptyCart']);
+
 Route::get('/cart', [\App\Http\Controllers\OrderController::class, 'cart']);
 
 Route::get('/order', [\App\Http\Controllers\OrderController::class, 'order']);

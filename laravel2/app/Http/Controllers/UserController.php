@@ -34,6 +34,9 @@ class UserController extends Controller
                 $user->password = password_hash($user->password, PASSWORD_DEFAULT);
                 $insert = $user->save();
                 if ($insert) {
+                    $user = \App\Models\User::where('email', $user->email)->first();
+                    session()->put('userId', $user->id);
+
                     return redirect('/products');
                 }
             }

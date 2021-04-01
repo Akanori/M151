@@ -87,9 +87,15 @@ class OrderController extends Controller
         return redirect("/cart");
     }
 
+    public function emptyCart(){
+        session()->forget('cart');
+        echo '<script>alert("Wahrenkorb gelehrt!");
+            window.location.href = "/products";</script>';
+    }
+    
     public function order()
     {
-        if (session()->has('cart') || session()->has('userId')) {
+        if (session()->has('cart') && session()->has('userId')) {
             $cart = session()->get('cart');
 
             $total = $this->getTotal();
@@ -99,7 +105,7 @@ class OrderController extends Controller
 
             return view('order', ['cart' => $cart, 'total' => $total, 'user' => $user]);
         } else {
-            return redirect('/products');
+            return redirect('/cart');
         }
     }
 

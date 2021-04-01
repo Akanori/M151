@@ -10,6 +10,51 @@
     <header></header>
 
     <table>
+        <tr>
+            <td>
+                <h2>Adresse</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>{{$user -> lastname}}</td>
+        </tr>
+        <tr>
+            <td>Vorname:</td>
+            <td>{{$user -> firstname}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{$user -> email}}</td>
+        </tr>
+        <tr>
+            <td>Telefonnummer:</td>
+            <td>{{$user -> telephonenumber}}</td>
+        </tr>
+        <tr>
+            <td>Adresse:</td>
+            <td>{{$user -> street}} {{$user -> housenumber}}</td>
+        </tr>
+        <tr>
+            <td>PLZ:</td>
+            <td>{{$user -> zipcode}}</td>
+        </tr>
+        <tr>
+            <td>Ort:</td>
+            <td>{{$user -> city}}</td>
+        </tr>
+        <tr></tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <h2>Bestellungen</h2>
+            </td>
+        </tr>
+    </table>
+    
+    <table>
         <thead>
             <tr>
                 <th>Datum</th>
@@ -24,45 +69,6 @@
             </tr>
             @endforeach
         </tbody>
-    </table>
-    <table>
-    <tr>
-    <td>Zahlungsart:</td>
-    <td>Rechnung</td>
-    </tr>
-    <tr></tr>
-    <tr>
-    <td><h2>Lieferadresse</h2></td>
-    </tr>
-    <tr>
-    <td>Name:</td>
-    <td>{{$user -> lastname}}</td>
-    </tr>
-    <tr>
-    <td>Vorname:</td>
-    <td>{{$user -> firstname}}</td>
-    </tr>
-    <tr>
-    <td>Email:</td>
-    <td>{{$user -> email}}</td>
-    </tr>
-    <tr>
-    <td>Telefonnummer:</td>
-    <td>{{$user -> telephonenumber}}</td>
-    </tr>
-    <tr>
-    <td>Adresse:</td>
-    <td>{{$user -> street}} {{$user -> housenumber}}</td>
-    </tr>
-    <tr>
-    <td>PLZ:</td>
-    <td>{{$user -> zipcode}}</td>
-    </tr>
-    <tr>
-    <td>Ort:</td>
-    <td>{{$user -> city}}</td>
-    </tr>
-    <tr></tr>
     </table>
 
     <script src="{{ asset('/js/template.js')}}"></script>

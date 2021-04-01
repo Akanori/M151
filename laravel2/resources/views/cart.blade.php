@@ -45,12 +45,13 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>Total:</td>
+                <td class="bold">Total:</td>
                 <td>{{$total}}</td>
             </tr>
         </tbody>
     </table>
     <a href="/order"><button>Bestellen</button></a>
+    <a href="/emptyCart"><button>Wahrenkorb leeren</button></a>
 
     <script src="{{ asset('/js/template.js')}}"></script>
     <script src="{{ asset('/js/updateCart.js')}}"></script>
